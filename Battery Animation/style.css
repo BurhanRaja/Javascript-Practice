@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d3557;
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    background-color: #457b9d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.battery {
+    width: 130px;
+    height: 60px;
+    margin: 20px;
+    border: 5px solid #f1faee;
+    position: relative;
+    padding: 4px;
+}
+.battery::after {
+    content: "";
+    position: absolute;
+    border: 5px solid #f1faee;
+    right: -12px;
+    top: 18px;
+}
+
+.filled-percentage {
+    height: 100%;
+    animation: batteryFill 5s ease 1.5s infinite normal;
+}
+
+@keyframes batteryFill {
+    0% {
+        background-color: red;
+        width: 0;
+    }
+    20% {
+        background-color: #f8961e;
+        width: 25%;
+    }
+    30% {
+        background-color: #f8961e;
+        width: 25%;
+    }
+    50% {
+        background-color: #ffd23f;
+        width: 50%;
+    }
+    60% {
+        background-color: #ffd23f;
+        width: 50%;
+    }
+    70%{
+        background-color: #9ef01a;
+        width: 75%;
+    }
+    80%{
+        background-color: #9ef01a;
+        width: 75%;
+    }
+    90% {
+        background-color: #00c500;
+        width: 100%;
+    }
+    100% {
+        background-color: #00c500;
+        width: 100%;
+    }
+}
+
+.btn {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #2b2d42;
+    color: #f1faee;
+    animation: dance 0.3s ease 0s infinite alternate;
+}
+
+@keyframes dance {
+    from {
+        transform: skewY(10deg);
+    }
+    to {
+        transform: skewY(-10deg);
+    }
+}
